@@ -1,6 +1,7 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[11pt, letterpaper]{article}
 
 \usepackage{latexsym}
+\usepackage[letterpaper, margin=1in]{geometry}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -54,9 +55,18 @@
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat{\section}
+  { \vspace{-4pt}
+    \scshape\raggedright\large\bfseries
+    \vspace{-5pt}}
+  {}{0em}
+  {}                                                  % Insert code before heading
+  [\color{black}\titlerule\vspace{-5pt}]              % Line
+
+\titleformat{\subsection}
+  {\large\scshape\raggedright}
+  {}{0em}
+  {}
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -91,13 +101,20 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{\small #2} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+% \newcommand{\resumeProjectHeading}[2]{
+%     \item
+%     \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+%       \small#1 & \textbf{\small #2}\\
+%     \end{tabular*}\vspace{-7pt}
+% }
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\hspace{4pt}}
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -112,13 +129,15 @@
 \begin{document}
 
 \begin{center}
-    {\Huge \scshape Eugin Pahk} \\ \vspace{1pt}
+    {
+    \huge \scshape Eugin Pahk} \\ \vspace{4pt}
     \small
-    \raisebox{-0.1\height}\faPhone\ 000-888-111 ~
-    \href{mailto:youremail@gmail.com}{\faEnvelope\ youremail@gmail.com} ~ 
-    \href{https://linkedin.com/in/}{\faLinkedin\ -linkedin-id}  ~
-    \href{https://github.com/}{\faGithub\ Your Username}
-    \vspace{-8pt}
+    \raisebox{-0.1\height}\faPhone\ (719)-888-111 ~
+    \href{mailto:eugin03@gmail.com}{\faEnvelope\ eugin03@gmail.com} ~ \\
+    \vspace{2pt}
+    \href{https://linkedin.com/in/epahk}{\faLinkedin\ https://linkedin.com/in/epahk}  ~
+    \href{https://github.com/gosueep}{\faGithub\ https://github.com/gosueep}
+    \vspace{-5pt}
 \end{center}
 
 
@@ -129,122 +148,147 @@
 % % adjust vscape based on the space you want to leave between each section.
 
 
-%-----------EDUCATION-----------
-\section{Education}
+\section{Education}   %-----------EDUCATION-----------
   \resumeSubHeadingListStart
     \resumeSubheading
       {Colorado School of Mines}{August 2021 -- December 2023}
       {Bachelor's of Science in Computer Science }{GPA: 4.0}
-      %leave a line after this
-      
-      \small{\textbf{Coursework: Course-1, Course-2, Course-3, Course-4}}
-      \resumeSubHeadingListEnd
+      \resumeItemListStart
+        \resumeItem{Colorado Scholars Fund Recipient -- full-tuition scholarship}
+        \resumeItem{Google CMAPP Scholar, PATHS CS Scholar, FIRST Scholar}
+        % \resumeItem{Clubs: ACM, Oresec, Competitive Programming}
+      \resumeItemListEnd
+      % \small{\textbf{Coursework: Course-1, Course-2, Course-3, Course-4}}
+    \resumeSubHeadingListEnd
 
-\vspace{-18pt}
-
-%-----------Technical Skilss-----------
-\section{Technical Skills}
+\section{Skills and Certifications}   %-----------Technical Skills-----------
  \begin{itemize}[leftmargin=0.1in, label={}]
     \small{\item{
-     \textbf{Languages/Database}{: Skill 1, Skill 2, Skill 3, Skill 4} \\
-     \textbf{Web Technologies}{: Skill 1, Skill 2, Skill 3, Skill 4} \\
-     \textbf{Software \& Tools}{: Skill 1, Skill 2, Skill 3, Skill 4}\\
-     
+      \textbf{Active Secret Clearance}\\
+      \textbf{Skills/Languages}{: Python, Java, C++, JS, C\#, AWS} \\
+      \textbf{Frameworks \& Tools}{: NodeJS, React, SolidJS, Maven, Jenkins, SonarQube} \\
+      \textbf{Certifications}{: AWS Solutions Architect -- Associate, Security Pro, Network Pro, Linux Pro}\\
     }}
  \end{itemize}
- \vspace{-20pt}
 
-%-----------EXPERIENCE-----------
-\section{Experience}
+\section{Work Experience}   %-----------Work EXPERIENCE-----------
   \resumeSubHeadingListStart
+    % Chevron
     \resumeSubheading
-      {Company Name }{Month Year -- Month Year}
-      {Title}{Location}
+      {Chevron}{May 2023 -- Aug. 2023}
+      {Software Engineering Intern}{Houston, TX}
       \resumeItemListStart
-        \resumeItem {Write about your work experience asdfasdfasdfasdfasdfasdfalksdjfklasjdfkljasdklfjasdkljflkasdjfklajsdklfjaskdjfopasdjfkpasdlfnasdojfaosdpfjlksdjflkasdjf}
-        \resumeItem {Write about your work experience}
-        \resumeItem {Write about your work experience}
-%Based on the number of point you want to add add the "\resumeItem" for each point you want to add.
+        \resumeItem{
+          Developed C\# plugins, modeling 3D seismic data to optimize geoscientist workflows. 
+          Contributed \$5M in business value, aiding drilling operations to prevent kicks and well losses}
+        \resumeItem{Wrote C\# and Python scripts for data migration between Azure environments for Chevron New Energies}
     \resumeItemListEnd
       
+    % Cloud303
     \resumeSubheading
-      {Company Name }{Month Year -- Month Year}
-      {Title}{Location}
+      {Cloud303}{Aug. 2022 -- May 2023}
+      {Cloud \& Software Engineering Intern}{Lakewood, CO}
       \resumeItemListStart
-        \resumeItem {Write about your work experience}
-        \resumeItem {Write about your work experience}
-        \resumeItem {Write about your work experience}
+        \resumeItem{Built a full-stack web app utilizing computer vision to locate missing people in drone searches. React frontend, Python backend containerized for AWS Lambda}
+        \resumeItem{Provided consulting to clients on security, efficiency, and cost of their AWS tech stacks}
+        % \resumeItem{Wrote a metrics tool in Python in our CRM software Odoo}
     \resumeItemListEnd
     
+    % Northrop Grumman   
     \resumeSubheading
-      {Company Name }{Month Year -- Month Year}
-      {Title}{Location}
+      {Northrop Grumman}{June 2022 -- Aug. 2022}
+      {Systems \& Software Engineering Intern}{Colorado Springs, CO}
       \resumeItemListStart
-        \resumeItem {Write about your work experience}
-        \resumeItem {Write about your work experience}
-        \resumeItem {Write about your work experience}
+        \resumeItem{Automated generation of JUnit tests using fuzzing tools; increased code coverage up to 38\%}
+        \resumeItem{Utilized Maven and Jenkins, to create SonarQube jobs for code analysis for 8 repositories}
+    \resumeItemListEnd
+
+    % Discrete Math
+    \resumeSubheading
+    {Colorado School of Mines}{Jan. 2022 -- May 2022}
+    {Discrete Math Teaching Assistant}{Golden, CO}
+    \resumeItemListStart
+      \resumeItem{Taught fundamentals of computer science including logic, sets, proofs, combinatorics, and recursion}
+      \resumeItem{Wrote homework assignments \& exams, graded, and held weekly office hours}
     \resumeItemListEnd
     
   \resumeSubHeadingListEnd
-\vspace{-16pt}
-% adjust vscape based on the space you want to leave between each section.
 
+\section{Research Experience}   %-----------Work EXPERIENCE-----------
+  \resumeSubHeadingListStart
+    % CCSP
+    \resumeSubheading
+      {Center for Cyber Security and Privacy}{Sept 2021 -- May 2022}
+      {Research Assistant, Co-Author}{Golden, CO}
+      \resumeItemListStart
+        \resumeItem{Developed website for a user study simulating privacy negotiations in smart homes}
+        \resumeItem{Lead member on the negotiation algorithm; conducted statistical analysis using R and Python}
+        \resumeItem{Published our paper in ACM CHI 2023 Conference, 2nd author}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
-\section{Projects}
-    \vspace{-6pt}
+\section{Leadership Experience \& Clubs}  %-----------Work EXPERIENCE-----------
+  \resumeSubHeadingListStart
+    % ACM
+    \resumeSubheading
+      {Association for Computing Machinery (ACM)}{Aug. 2021 -- Present}
+      {Vice Chair}{Golden, CO}
+      \resumeItemListStart
+        \resumeItem{Led club \& officers, planned weekly meetings \& events, arranged tech talks with industry partners}
+        \resumeItem{Organized a hackathon at University of North Carolina Chapel Hill with 16 members}
+        \resumeItem{Facilitated a mentorship program in collaboration with ACM-W to connect underclassmen with upperclassmen}
+      \resumeItemListEnd
+
+    % Oresec
+    \resumeSubheading
+      {Mines Cybersecurity Club (Oresec) }{Aug. 2021 -- Present}
+      {Secretary}{Golden, CO}
+      \resumeItemListStart
+        \resumeItem{Coordinated tech talks from alumni and industry professionals}
+        \resumeItem{Competed in CTFs, blue-team defense competitions; 3rd at RMCCDC regionals}
+      \resumeItemListEnd
+
+    % % CPM
+    % \resumeSubheading
+    %   {Competitive Programming at Mines}{Aug. 2021 -- Present}
+    %   {Member}{Golden, CO}
+    %   \resumeItemListStart
+    %     \resumeItem{Weekly Kattis and Codeforces competitions}
+    %     \resumeItem{Coordinated tech talks from alumni and industry professionals}
+    % \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\section{Projects}    %-----------PROJECTS-----------
     \resumeSubHeadingListStart
-    \resumeProjectHeading
-          {\textbf{Project Title} $|$ \emph{Tool1, Tool2, Tool3, Tool4 \href{https://github.com/}{Git}}}{Month -- Month Year}
-          \resumeItemListStart
-            \resumeItem{ Write about your project experience.}
-            \resumeItem{ Write about your project experience.}
-          \resumeItemListEnd
-          \vspace{-14pt}
-    \resumeProjectHeading
-          {\textbf{Project Title} $|$ \emph{Tool1, Tool2, Tool3, Tool4 \href{https://github.com/}{Git}}}{Month -- Month Year}
-          \resumeItemListStart
-            \resumeItem{ Write about your project experience.}
-            \resumeItem{ Write about your project experience.}
-          \resumeItemListEnd
-          \vspace{-14pt}
-    \resumeProjectHeading
-          {\textbf{Project Title} $|$ \emph{Tool1, Tool2, Tool3, Tool4 \href{https://github.com/}{Git}}}{Month -- Month Year}
-          \resumeItemListStart
-            \resumeItem{ Write about your project experience.}
-            \resumeItem{ Write about your project experience.}
-          \resumeItemListEnd
-          \vspace{-14pt}
-    \resumeProjectHeading
-          {\textbf{Project Title} $|$ \emph{Tool1, Tool2, Tool3, Tool4 \href{https://github.com/}{Git}}}{Month -- Month Year}
-          \resumeItemListStart
-            \resumeItem{ Write about your project experience.}
-            \resumeItem{ Write about your project experience.}
-          \resumeItemListEnd
-          \vspace{-14pt}
+      % Rende
+      \resumeProjectHeading
+      {Rende}{Jan. 2023 -- Present}
+        \resumeItemListStart
+          \resumeItem{Web app to help students find campus events and to help organizers facilitate and advertise their meetings}
+          \resumeItem{SolidJS frontend, Go backend, Postgres DB, hosted in AWS}
+        \resumeItemListEnd
+    % \resumeProjectHeading
+    %       {\textbf{Project Title} $|$ \emph{Tool1, Tool2, Tool3, Tool4 \href{https://github.com/}{Git}}}{Month -- Month Year}
+    %       \resumeItemListStart
+    %         \resumeItem{ Write about your project experience.}
+    %         \resumeItem{ Write about your project experience.}
+    %       \resumeItemListEnd
+    %       \vspace{-14pt}
     \resumeSubHeadingListEnd
-\vspace{-3pt}
-
 
 %------------Publications-----------
-\section{Publication}
-\vspace{-6pt}
-    \resumeSubHeadingListStart
-    \resumeProjectHeading
-    {\textbf{The Title of your paper} $|$ \emph{\href{https://www.researchgate.net}{Publication link}}}{Month Year}
-    \resumeItemListStart
-            \resumeItem{Write about your paper.}
-            \resumeItem{Write about your paper.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-\vspace{-16pt}
+% \section{Publication}
+% \vspace{-6pt}
+%     \resumeSubHeadingListStart
+%     \resumeProjectHeading
+%     {\textbf{The Title of your paper} $|$ \emph{\href{https://www.researchgate.net}{Publication link}}}{Month Year}
+%     \resumeItemListStart
+%             \resumeItem{Write about your paper.}
+%             \resumeItem{Write about your paper.}
+%           \resumeItemListEnd
+%     \resumeSubHeadingListEnd
+% \vspace{-16pt}
 % adjust vscape based on the space you want to leave between each section.
-
-%-----------PROGRAMMING SKILLS-----------
-\section{Certifications}
-\textbf{Certificate 1}{: Title} \\
-\textbf{Certificate 2} {: Title}
-
-
 
 \end{document}
